@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback("Unable to find location", undefined)
         } else {
-            callback(undefined, `${body.daily.data[0].summary} Venku je právě ${body.currently.temperature} °C. Je zde ${body.currently.precipProbability}% pravděpodobnost srážek.`)
+            callback(undefined, `${body.daily.data[0].summary} Nejnižší teploty mohou dosáhnout až ${body.daily.data[0].temperatureLow}°C. Právě teď je ${body.currently.temperature}°C. Je zde ${body.currently.precipProbability}% pravděpodobnost srážek.`)
         }
     })
 }
